@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-<title >issue to book</title>
+<title >Add book</title>
     <!-- Bootstrap core CSS -->
 	
     <!-- Bootstrap core CSS -->
@@ -17,44 +17,8 @@
     <!-- Custom styles for this template -->
     <link href="css/modern-business.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="http:/resources/demos/style.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-  $( function() {
-    var dateFormat = "mm/dd/yy",
-      from = $( "#from" )
-        .datepicker({
-          defaultDate: "+1w",
-          changeMonth: true,
-          numberOfMonths: 3
-        })
-        .on( "change", function() {
-          to.datepicker( "option", "minDate", getDate( this ) );
-        }),
-      to = $( "#to" ).datepicker({
-        defaultDate: "+1w",
-        changeMonth: true,
-        numberOfMonths: 3
-      })
-      .on( "change", function() {
-        from.datepicker( "option", "maxDate", getDate( this ) );
-      });
+
  
-    function getDate( element ) {
-      var date;
-      try {
-        date = $.datepicker.parseDate( dateFormat, element.value );
-      } catch( error ) {
-        date = null;
-      }
- 
-      return date;
-    }
-  } );
-  </script>
-    <!-- Custom styles for this template -->
 
 	</head>
 	  <body>
@@ -98,24 +62,27 @@
 	
 	<div>
 	<form>
-	<label>first name:
-	<input type="text" class="form-control" name="fname" placeholder="first Name">
+	<label>ISBN:
+	<input type="text" class="form-control" name="isbn" size="50">
 	</label><br><br>
-		<label>last name:
-	<input type="text" class="form-control" name="lname" placeholder="last Name">
+		<label>Title:
+	<input type="text" class="form-control" name="title" size="50">
 	</label><br><br>
-			<label>Title:
-	<input type="text" class="form-control" name="title" placeholder="book title">
+			<label>Author:
+	<input type="text" class="form-control" name="auther" size="50">
 	</label><br><br>
+			<label>Edithion:
+	<input type="text" class="form-control" name="edition" size="50">
+	</label><br><br>
+				<label>Publication:
+	<input type="text" class="form-control" name="publication" size="50">
+	</label><br><br>
+
+
 	
-<label for="to">Issue date:</label>
-<input type="text" id="from" name="from">
-<label for="to">Due date:</label>
-<input type="text" id="to" name="to">
-	
-	</label><br>
-	   <input type="submit" value="ADD">
-	   <br><br><br><br><br><br>
+<input type="submit" value="Add">
+<input type="reset" value="Reset">
+	   <br><br>
 	</form>
 	</div>
 	
@@ -131,7 +98,7 @@
     <!-- Bootstrap core JavaScript -->
     
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+<script src="vendor/jquery/jquery.min.js"></script>
   </body>
 
 	</html>
