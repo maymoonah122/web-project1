@@ -27,3 +27,7 @@ body {
 .portfolio-item {
   margin-bottom: 30px;
 }
+#addBookForm , #AddnewCategory , #issueForm {
+	margin-left: 50px;
+    margin-top: 20px;
+}

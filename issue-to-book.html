@@ -8,8 +8,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-<title >Add book</title>
-
+<title >issue to book</title>
+    <!-- Bootstrap core CSS -->
 	
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -17,17 +17,47 @@
     <!-- Custom styles for this template -->
     <link href="css/modern-business.css" rel="stylesheet">
 
-
-
-
-
-
-
-
-
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="http:/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    var dateFormat = "mm/dd/yy",
+      from = $( "#from" )
+        .datepicker({
+          defaultDate: "+1w",
+          changeMonth: true,
+          numberOfMonths: 3
+        })
+        .on( "change", function() {
+          to.datepicker( "option", "minDate", getDate( this ) );
+        }),
+      to = $( "#to" ).datepicker({
+        defaultDate: "+1w",
+        changeMonth: true,
+        numberOfMonths: 3
+      })
+      .on( "change", function() {
+        from.datepicker( "option", "maxDate", getDate( this ) );
+      });
+ 
+    function getDate( element ) {
+      var date;
+      try {
+        date = $.datepicker.parseDate( dateFormat, element.value );
+      } catch( error ) {
+        date = null;
+      }
+ 
+      return date;
+    }
+  } );
+  </script>
+    <!-- Custom styles for this template -->
 
 	</head>
-  <body>
+	  <body>
 
     <!-- Navigation -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -41,14 +71,14 @@
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact</a>
             </li>
-            <li class="nav-item active dropdown">
+            <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               Categories 
+                Categories
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
                 <a class="dropdown-item" href="portfolio-3-col.html">Category 1</a>
                 <a class="dropdown-item" href="portfolio-3-col.html">Category 2</a>
-                <a class="dropdown-item active" href="portfolio-3-col.html">Category 3</a>
+                <a class="dropdown-item" href="CategoryPage.html">Category 3</a>
                 <a class="dropdown-item" href="portfolio-3-col.html">Category 4</a>
                 <a class="dropdown-item" href="portfolio-3-col.html">Category 5</a>
               </div>
@@ -58,7 +88,7 @@
                 Profile
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-                <a class="dropdown-item" href="librarian_profile.html">librarian profile</a>
+                <a class="dropdown-item" href="user's profile.html">user's profile</a>               
               </div>
             </li>
           </ul>
@@ -67,48 +97,30 @@
     </nav>
 	
 	<div>
-	<form id="addBookForm">
-
-		<label>Title:
-	<input type="text" class="form-control" name="title" size="50">
+	<form id="issueForm">
+	<label>first name:
+	<input type="text" class="form-control" name="fname" placeholder="first Name">
 	</label><br><br>
-		<label>ISBN:
-	<input type="text" class="form-control" name="isbn" size="50">
+		<label>last name:
+	<input type="text" class="form-control" name="lname" placeholder="last Name">
 	</label><br><br>
-			<label>Author:
-	<input type="text" class="form-control" name="auther" size="50">
-	</label><br><br>
-		<label>Publisher:
-	<input type="text" class="form-control" name="publisher" size="50">
-	</label><br><br>
-			<label>Category:
-	<input type="text" class="form-control" name="category" size="50">
-	</label><br><br>
-			<label>Number of Pages:
-	<input type="text" class="form-control" name="pages" size="50">
-	</label><br><br>
-			<label>Book language:
-	<input type="text" class="form-control" name="language" size="50">
-	</label><br><br>
-				<label>book picture:
-	<input type="file"  name="picture" size="50">
-	</label><br><br>
-				<label>Description:
-	<textarea  class="form-control" name="description" rows="30" cols="100" ></textarea>
+			<label>Title:
+	<input type="text" class="form-control" name="title" placeholder="book title">
 	</label><br><br>
 	
+<label for="to">Issue date:</label>
+<input type="text" id="from" name="from">
+<label for="to">Due date:</label>
+<input type="text" id="to" name="to">
 	
-
-
-	
-<input type="submit" value="Add">
-<input type="reset" value="Reset">
-	   <br><br>
+	</label><br>
+	   <input type="submit" value="Issue">
+	   <br><br><br><br><br><br>
 	</form>
 	</div>
 	
 	
-    <!-- Footer -->
+	   <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
@@ -117,13 +129,12 @@
     </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
+    
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   </body>
 
-</html>
-
+	</html>
 	
 	
 	
